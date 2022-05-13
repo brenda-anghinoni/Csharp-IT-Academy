@@ -46,7 +46,7 @@ Console.WriteLine("\n--- Ex.1");
 string paisNome = "França";
 foreach (KeyValuePair<int, string> item in paises)
 {
-    if(item.Value == paisNome){
+    if(item.Value.Equals(paisNome)){
         Console.WriteLine("O país {0} tem código {1}", item.Value, item.Key); 
         break;
     }
@@ -61,12 +61,7 @@ listaNumeros.Add(20);
 listaNumeros.Add(30);
 listaNumeros.Add(35);
 
-double media = 0;
-foreach (var item in listaNumeros)
-{
-    media+=item;
-}
-media = media/listaNumeros.Count;
+double media = listaNumeros.Average();
 Console.WriteLine("O número de elementos maiores que a média {0} são {1}", media,TotalAcimaMedia()); 
 
 int TotalAcimaMedia(){
